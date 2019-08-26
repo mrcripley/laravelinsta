@@ -11,7 +11,7 @@ class ProfilesController extends Controller
     public function index(User $user)
     {
 
-
+      //return//
         return view('profiles.index', compact('user'));
 
     }
