@@ -28,7 +28,7 @@
                    @if (Auth::user())
                         href="{{ url('/profile/') }}/{{ Auth::user()->id }}">
                     @else
-                        href="{{ url('/') }}/home">
+                        href="{{ url('/') }}/welcome">
                     @endif
 
                      <img class="pr-3" src="{{ url('/') }}/img/logo.png" style="max-height: 25px;" alt="">
