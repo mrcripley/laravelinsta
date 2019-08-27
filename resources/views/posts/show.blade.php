@@ -28,22 +28,39 @@
                     </div>
 
 
-                        <a class="pl-2 font-weight-bold" href="">Follow</a>
+                        <a class="pl-4 font-weight-bold" href="">Follow</a>
 
+                    <form class="ml-auto" action="{{ url('/p', ['id' => $post->id]) }}" method="post">
+                        <input class="btn btn-danger" type="submit" value="Delete post" />
+                        @method('delete')
+                        @csrf
+                    </form>
 
 
                 </div>
-                <div class="pt-5 d-flex font-weight-bold">
+
+
+
+
+
+
+                <div class="pt-2 d-flex font-weight-bold">
                     <a href="../profile/{{ $post->user->id }}">
-                        <span class="text-dark">{{ $post->user->username }}
-
-
-                        </span>
+                        <span class="text-dark">{{ $post->user->username }}</span>
                     </a>
+
+
+
+
 
                 </div>
                {{ $post->caption }}
             </div>
+
+
+
+
+
 
         </div>
 

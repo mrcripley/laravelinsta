@@ -41,7 +41,7 @@
                     </div>
                  <div class="pt-4 font-weight-bold">{{ $user->profile->title}}</div>
                     <div>{{ $user->profile->description }}</div>
-                    <div class="font-weight-bold"> <a href="#">{{ $user->profile->url }}</a></div>
+                    <div class="font-weight-bold"> <a href="{{ $user->profile->url }}">{{ $user->profile->url }}</a></div>
 
             </div>
 

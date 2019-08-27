@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -18,15 +20,33 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers
+        {
+        logout as performLogout;
+    }
+
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
 
+
+
+    protected function authenticated()
+    {
+        if (Auth::check()) {
+            $current_user = (Auth::user()->id);
+            return redirect()->route('profile.show', $current_user);
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $this->performLogout($request);
+        return redirect()->route('welcome');
+    }
     /**
      * Create a new controller instance.
      *

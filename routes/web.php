@@ -25,5 +25,5 @@ Route::get('/p/create', 'PostsController@create');
 Route::get('/p/{post}','PostsController@show');
 Route::post('/p', 'PostsController@store');
 
-Route::delete('/p/{id}/destroy', 'PostsController@destroy')->name('posts.destroy');
+Route::delete('/p/{id}', 'PostsController@destroy')->name('posts.destroy');
 

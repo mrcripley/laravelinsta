@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use App\Post;
 
@@ -44,12 +45,11 @@ class PostsController extends Controller
     }
         public function destroy($id)
          {
+            $postid = Post::where('id', $id);
+            $postid->delete();
+             $current_user = (Auth::user()->id);
+             return redirect()->route('profile.show', $current_user);
 
-
-        $posts = Post::find($id);
-        $posts->delete();
-
-        return redirect('/profile/1');
          }
          public function show(Post $post)
         {
