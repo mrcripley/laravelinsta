@@ -30,8 +30,8 @@
 
                         <a class="pl-4 font-weight-bold" href="">Follow</a>
                     @can ('delete', $post)
-                    <form class="ml-auto" action="{{ url('/p', ['id' => $post->id]) }}" method="post">
-                        <input class="btn btn-danger" type="submit" value="Delete post" />
+                    <form id="myForm" class="ml-auto" action="{{ url('/p', ['id' => $post->id]) }}" method="post">
+                        <button id="submit-button" class="confirm btn btn-danger" type="submit" value="Delete post">DELETE</button>
                         @method('delete')
                         @csrf
                     </form>
@@ -70,6 +70,10 @@
 
 
     </div>
+
+
+
+
 
 
 @endsection
