@@ -45,8 +45,11 @@ class PostsController extends Controller
     }
         public function destroy($id)
          {
-            $postid = Post::where('id', $id);
-            $postid->delete();
+             $post = Post::find($id);
+
+             $this->authorize('delete', $post);
+            $post->delete();
+
              $current_user = (Auth::user()->id);
              return redirect()->route('profile.show', $current_user);
 

@@ -29,13 +29,13 @@
 
 
                         <a class="pl-4 font-weight-bold" href="">Follow</a>
-
+                    @can ('delete', $post)
                     <form class="ml-auto" action="{{ url('/p', ['id' => $post->id]) }}" method="post">
                         <input class="btn btn-danger" type="submit" value="Delete post" />
                         @method('delete')
                         @csrf
                     </form>
-
+                    @endcan
 
                 </div>
 
