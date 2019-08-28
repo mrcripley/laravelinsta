@@ -33,7 +33,7 @@
                 @endif
 
                 <img class="pr-3" src="{{ url('/') }}/img/logo.png" style="max-height: 25px;" alt="">
-                <div class="pl-3" style="border-left: 1px solid #333"> freeCodeGram</div>
+                <div class="pl-3" style="border-left: 1px solid #333"> goodApp</div>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"

@@ -6,7 +6,7 @@
 
                 <div class="container text-center" style="padding-top: 300px; font-size: 42px; font-weight: 700;">
                     <div class="row">
-                        <div class="col-12">freeCodeGram</div>
+                        <div class="col-12">goodApp</div>
                     </div>
                     <div class="row">
                         <div class="col-12">
